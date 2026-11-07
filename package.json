@@ -1,0 +1,13 @@
+{
+  "name": "chatgpt-imagegen-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./v2.ts" },
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "bun test tests/unit && bun test tests/v2.test.ts"
+  },
+  "dependencies": { "file-type": "22.0.1" }
+}

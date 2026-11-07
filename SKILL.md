@@ -1,5 +1,5 @@
 ---
-name: ChatGPT Image Generation
+name: chatgpt-imagegen
 description: Generate or edit images in OpenCode using the user's ChatGPT subscription and the gpt_imagegen tool, without an OpenAI API key. Use when asked to generate an image, illustration, photo, hero asset, texture, sprite, mockup, transparent PNG, or edit reference images; especially for «сгенерируй картинку», «нарисуй», «через подписку ChatGPT», «без API». Also use as the image-generation backend for design skills when ChatGPT subscription generation is requested.
 ---
 
@@ -61,11 +61,10 @@ Example tool arguments (not a shell command):
 
 ## Local installation and troubleshooting
 
-Global loader: `~/.config/opencode/plugins/gpt-imagegen-v2.ts`.
-Local implementation: `~/.config/opencode/gpt-imagegen-v2/v2.ts`.
+Installation: clone https://github.com/keeendaaa/chatgpt-imagegen-skill and follow its README. The plugin implementation is `v2.ts` in that clone; add the clone's absolute directory to OpenCode's `plugins` configuration after installing dependencies.
 Plugin ID: `local.gpt-imagegen.v2`.
 Upstream: https://github.com/yuji-hatakeyama/opencode-gpt-imagegen (local port of 0.1.14).
 
-If the tool is missing, check `opencode plugin list` or filter `/api/plugin` for the plugin ID and its state. The local loader is discovered globally; a project may still disable tools/plugins or restrict permissions. Do not edit user configuration or reinstall the V1 package automatically. Report the loading error; a user-controlled restart may be needed. The unmodified upstream V1 entrypoint does not load in V2.
+If the tool is missing, check `opencode plugin list` for the plugin ID and its state. A project may disable tools/plugins or restrict permissions. Do not edit user configuration or reinstall the V1 package automatically. Report the loading error; the user may try `/reload` after correcting configuration. The unmodified upstream V1 entrypoint does not load in V2.
 
-For implementation details and mock tests, read `~/.config/opencode/gpt-imagegen-v2/LOCAL-V2.md`. This local port is not automatically updated from upstream.
+Mock tests are included in the clone; run `bun run test` there without consuming image quota. This local port is not automatically updated from upstream. Do not assume the plugin is installed merely because this skill is available.
